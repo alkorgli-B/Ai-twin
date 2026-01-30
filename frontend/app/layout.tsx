@@ -2,8 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AI-Twin - Your Digital Intelligence Companion',
-  description: 'The Future of Personal AI',
+  title: 'AI-Twin - Senku Project',
+  description: 'Your Digital Intelligence Companion',
 };
 
 export default function RootLayout({
@@ -13,7 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-black text-white antialiased">
+        {children}
+      </body>
     </html>
   );
 }
