@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Remove 'export' for Replit (we need server)
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/Ai-twin' : '',
+  // Remove basePath for Replit
 }
 
 module.exports = nextConfig
