@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Twin - Your Digital Intelligence Companion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid 20s linear infinite;
+        }
+        
+        @keyframes grid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+        
+        .logo {
+            font-size: 4em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(255,255,255,0.5);
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 30px rgba(255,255,255,0.5); }
+            50% { text-shadow: 0 0 50px rgba(255,255,255,0.8); }
+        }
+        
+        .tagline {
+            font-size: 2em;
+            margin-bottom: 30px;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+        
+        .description {
+            font-size: 1.3em;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            font-weight: 600;
+            background: #fff;
+            color: #667eea;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+        }
+        
+        .features {
+            padding: 100px 20px;
+            background: #0a0a0a;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(102, 126, 234, 0.6);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+        
+        .feature-card p {
+            font-size: 1.1em;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .coming-soon {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .coming-soon h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+        }
+        
+        .coming-soon p {
+            font-size: 1.5em;
+            margin-bottom: 50px;
+        }
+        
+        .waitlist {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .waitlist input {
+            padding: 20px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            min-width: 300px;
+        }
+        
+        .waitlist button {
+            padding: 20px 40px;
+            font-size: 1.2em;
+            font-weight: 600;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .waitlist button:hover {
+            transform: scale(1.05);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #000;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="content">
+            <div class="logo">🧠 AI-Twin</div>
+            <h1 class="tagline">Your Digital Intelligence Companion</h1>
+            <p class="description">
+                The world's first true AI twin that learns, grows, and evolves with you. 
+                Experience the future of personal artificial intelligence.
+            </p>
+            <a href="#waitlist" class="cta-button">Join the Revolution</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Superhuman Capabilities</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Perfect Memory</h3>
+                <p>Never forget anything. Your AI-Twin remembers every conversation, every moment, every detail of your life.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🧬</div>
+                <h3>Evolving Intelligence</h3>
+                <p>Grows smarter every day by learning from your behaviors, preferences, and decisions.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Universal Translator</h3>
+                <p>Communicate in 7000+ languages instantly. Break down all language barriers.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Predictive Insights</h3>
+                <p>Anticipates your needs before you even think of them. True proactive intelligence.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Privacy First</h3>
+                <p>Your data stays yours. End-to-end encryption with zero-knowledge architecture.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>24/7 Companion</h3>
+                <p>Always available, always learning, always helping. Your digital twin never sleeps.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="coming-soon" id="waitlist">
+        <h2>The Future is Coming</h2>
+        <p>Be among the first to experience AI-Twin</p>
+        <div class="waitlist">
+            <input type="email" placeholder="Enter your email" id="emailInput">
+            <button onclick="joinWaitlist()">Join Waitlist</button>
+        </div>
+        <p style="margin-top: 30px; font-size: 1.2em;">🔥 Limited spots for early adopters</p>
+    </section>
+
+    <footer>
+        <p>© 2026 AI-Twin | Built by alkorgli-B | The Future of Intelligence</p>
+    </footer>
+
+    <script>
+        function joinWaitlist() {
+            const email = document.getElementById('emailInput').value;
+            if (email) {
+                alert('🎉 Welcome to the future! You\'re on the waitlist.\n\nEmail: ' + email + '\n\nWe\'ll contact you soon!');
+                document.getElementById('emailInput').value = '';
+            } else {
+                alert('Please enter your email address');
+            }
+        }
+    </script>
+</body>
+</html>
