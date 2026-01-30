@@ -1,0 +1,13 @@
+{
+  "name": "ai-twin",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm run start"
+  },
+  "workspaces": [
+    "frontend"
+  ]
+}
